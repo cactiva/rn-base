@@ -1,0 +1,53 @@
+{
+  "name": "RNBase",
+  "displayName": "RN Base",
+  "expo": {
+    "name": "RN Base",
+    "slug": "rn-base",
+    "privacy": "public",
+    "version": "1.0.0",
+    "entryPoint": "node_modules/expo/AppEntry.js",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "icon": "src/assets/images/icon.png",
+    "ios": {
+      "bundleIdentifier": "com.andromedia.rnbase",
+      "buildNumber": "1.0.0",
+      "infoPlist": {
+        "NSCameraUsageDescription": "To capture booking confirmation.",
+        "NSPhotoLibraryUsageDescription": "To choose booking confirmation from existing photos."
+      }
+    },
+    "android": {
+      "versionCode": 100,
+      "package": "com.andromedia.rnbase",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyD-6dn4tHXYdHJNZLGmQvvNSgL4elJPGSY"
+        }
+      }
+    },
+    "orientation": "portrait",
+    "primaryColor": "#00000000",
+    "notification": {
+      "icon": "src/assets/images/icon.png",
+      "color": "#00000000"
+    },
+    "loading": {
+      "icon": "src/assets/images/icon.png",
+      "backgroundColor": "#fff",
+      "hideExponentText": true
+    },
+    "splash": {
+      "backgroundColor": "#fff",
+      "image": "src/assets/images/splash.png"
+    },
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "backgroundColor": "#00000000"
+    }
+  }
+}
