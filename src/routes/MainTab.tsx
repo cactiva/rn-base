@@ -24,16 +24,16 @@ const TabBarComponent = ({ state, descriptors, navigation }: any) => {
           },
           role: ["user", "admin"],
         },
-        {
-          label: "Example",
-          path: "Example",
-          icon: {
-            name: "ios-walk",
-            size: 22,
-            color: "#8A8A8A",
-          },
-          role: ["user"],
-        },
+        // {
+        //   label: "Example",
+        //   path: "Example",
+        //   icon: {
+        //     name: "ios-walk",
+        //     size: 22,
+        //     color: "#8A8A8A",
+        //   },
+        //   role: ["user"],
+        // },
       ]}
       template={(props: any) => {
         const { label, path, icon, role } = props;

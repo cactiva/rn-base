@@ -1,8 +1,16 @@
 import { Text, Screen, Button, View } from "@src/libs";
 import React from "react";
 import logout from "@src/services/logout";
+import { observer, useObservable } from "mobx-react-lite";
+import { Dimensions } from "react-native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 
-export default () => {
+export default observer(() => {
+  const dim = Dimensions.get("window");
+  const nav = useNavigation();
+  const route = useRoute();
+  const meta = useObservable({});
+
   return (
     <Screen>
       <View
@@ -26,10 +34,19 @@ export default () => {
               color: "white",
             },
           }}
+          label="payment"
+          onPress={() => {nav.navigate("user/payment")}}
+        />
+        <Button
+          styles={{
+            label: {
+              color: "white",
+            },
+          }}
           label="Logout"
           onPress={() => logout()}
         />
       </View>
     </Screen>
   );
-};
+});
