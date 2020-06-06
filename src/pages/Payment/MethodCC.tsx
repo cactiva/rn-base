@@ -7,9 +7,25 @@ import { useNavigation, useRoute } from "@react-navigation/native";
 import Info from "@src/pages/Payment/Info";
 
 export default observer(({ item }: any) => {
-
+    const dim = Dimensions.get("window");
+    const nav = useNavigation();
+    const route = useRoute();
+    const meta = useObservable({});
+    
     const cc = () => {
-        alert(item)
+        Alert.alert(
+            "Alert Title",
+            "My Alert Msg",
+            [
+                {
+                    text: "Cancel",
+                    onPress: () => console.log("Cancel Pressed"),
+                    style: "cancel"
+                },
+                { text: "OK", onPress: () => nav.navigate("user/payment/detail") }
+            ],
+            { cancelable: false }
+        );
     }
 
     return (

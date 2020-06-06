@@ -14,7 +14,7 @@ export default observer(({ item }: any) => {
     const route = useRoute();
     const meta = useObservable({
         cc: {} as any,
-        ew: [
+        va: [
             { "id": 1, "name": "Bca" },
             { "id": 2, "name": "Bni" },
             { "id": 3, "name": "Bri" },
@@ -22,7 +22,7 @@ export default observer(({ item }: any) => {
             { "id": 5, "name": "Permata" },
             { "id": 6, "name": "Btn" },
         ],
-        va: [
+        ew: [
             { "id": 1, "name": "dana" },
             { "id": 2, "name": "gopay" },
             { "id": 3, "name": "ovo" },
@@ -121,11 +121,11 @@ export default observer(({ item }: any) => {
                             {
                                 meta.method == "ew" ?
                                     (Array.isArray(meta.ew) && meta.ew.map((item) => {
-                                        return (<RenderItem item={item} />);
+                                        return (<RenderItem key={uuid()} item={item} />);
                                     })) : (
                                         meta.method == "va" ?
                                             (Array.isArray(meta.va) && meta.va.map((item) => {
-                                                return (<RenderItem item={item} />);
+                                                return (<RenderItem key={uuid()} item={item} />);
                                             })) : null
                                     )
                             }

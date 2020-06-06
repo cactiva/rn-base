@@ -2,11 +2,11 @@ import { Text, Screen, Button, View, TopBar, Container, formatMoney } from "@src
 import React from "react";
 import logout from "@src/services/logout";
 import { observer, useObservable } from "mobx-react-lite";
-import { Dimensions } from "react-native";
+import { Dimensions, Alert } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import theme from "@src/theme";
 
-export default observer(({ item }: any) => {
+export default observer(({ item, method }: any) => {
     const dim = Dimensions.get("window");
     const nav = useNavigation();
     const route = useRoute();
@@ -18,8 +18,22 @@ export default observer(({ item }: any) => {
             style={{
                 width: "47%"
             }}
-            onPress={()=>{
-                alert(item.name)
+            onPress={() => {
+                Alert.alert(
+                    "Pay using "+item.name,
+                    "Get Payment Code after click pay, Are you sure?",
+                    [
+                        {
+                            text: "Cancel",
+                            onPress: () => console.log("Cancel Pressed"),
+                            style: "cancel"
+                        },
+                        { text: "Pay", onPress: () => {
+                            nav.navigate("user/payment/detail")
+                        } }
+                    ],
+                    { cancelable: false }
+                );
             }}
         >
             <Text

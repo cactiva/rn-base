@@ -5,6 +5,8 @@ import MainTab from "./MainTab";
 const routes: any = {
   "pages/sample": require("@src/pages/Sample").default,
   "user/payment": require("@src/pages/Payment").default,
+  "user/payment/detail": require("@src/pages/Payment/Detail").default,
+  "user/payment/response": require("@src/pages/Payment/Response").default,
 };
 
 const Stack = createStackNavigator();

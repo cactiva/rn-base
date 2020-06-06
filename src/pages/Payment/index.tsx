@@ -30,7 +30,6 @@ export default observer(() => {
 
                 <View
                     style={{
-                        flex: 1,
                         flexDirection: "row"
                     }}
                 >
@@ -41,7 +40,7 @@ export default observer(() => {
                             flex: 1
                         }}
                     >
-                        Payment Detail
+                        Payment
                 </Text>
                     <Text
                         style={{
