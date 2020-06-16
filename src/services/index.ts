@@ -1,23 +1,19 @@
 import { StatusBar } from "react-native";
-import initDataStore, { initDataStoreAuth } from "./initDataStore";
-import notification from "./notification";
+import initDataStore from "./initDataStore";
 import permissions from "./permissions";
+import { sourceFonts } from "@src/libs/fonts";
+import * as Font from "expo-font";
+import checkSession from "./checkSession";
 
-export default () => {
+export default async () => {
   StatusBar.setBarStyle("light-content");
+  await Font.loadAsync(sourceFonts);
 
   // request permissions
   permissions();
 
   // init data store
   initDataStore();
-};
-
-// Service loaded after check authentication
-export const servicesAuth = async () => {
-  // init data store
-  await initDataStoreAuth();
-
-  // Notification service
-  await notification();
+  await checkSession();
+  return true;
 };

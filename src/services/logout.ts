@@ -6,5 +6,6 @@ export default async (msg?: string) => {
   session.user = {};
   session.jwt = null;
   session.expired = null;
+  session.isLoggedin = false;
   alert(msg || "You are logged out.");
 };
