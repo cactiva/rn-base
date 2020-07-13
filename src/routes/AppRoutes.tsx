@@ -8,7 +8,7 @@ import User from "./User";
 export default observer(({ navigationRef }: any) => {
   return (
     <NavigationContainer ref={navigationRef}>
-      {session.isLoggedin ? <User /> : <Guest />}
+      {!!session.isLoggedin ? <User /> : <Guest />}
     </NavigationContainer>
   );
 });

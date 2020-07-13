@@ -1,4 +1,4 @@
-import { observer } from "mobx-react-lite";
+import { observer, useObservable } from "mobx-react-lite";
 import { Screen, TopBar, Container, Button, Text, Icon } from "@src/libs";
 import React from "react";
 import Theme from "@src/libs/theme";
@@ -9,6 +9,10 @@ import { useNavigation } from "@react-navigation/native";
 
 export default observer(() => {
   const nav = useNavigation();
+  const meta = useObservable({
+    update: false,
+    checkUpdate: false,
+  });
   const handleLogout = () => {
     Alert.alert("Logout", "Are you sure?", [
       {
@@ -26,6 +30,16 @@ export default observer(() => {
       action: () => nav.navigate("changePassword"),
       icon: {
         name: "md-key",
+      } as IIconProps,
+    },
+    {
+      label: "Check new update",
+      action: async () => {
+        meta.checkUpdate = true;
+      },
+      icon: {
+        name: "system-update",
+        source: "MaterialIcons",
       } as IIconProps,
     },
     {

@@ -4,7 +4,7 @@ import logout from "./logout";
 import { servicesAuth } from "./serviceAuth";
 
 export default async () => {
-  if (!!session.jwt && !!_.get(session, "user.id", null)) {
+  if (!!session.jwt) {
     const today = new Date();
     if (today.getTime() > session.expired) {
       logout("Session has expired.");
@@ -28,8 +28,8 @@ export default async () => {
 };
 
 export const setSession = (data) => {
-  session.jwt = data.jwt;
-  session.user = data.user;
+  if (!!data.jwt) session.jwt = data.jwt;
+  if (!!data.user) session.user = data.user;
   session.isLoggedin = true;
   const expired = new Date();
   expired.setHours(expired.getHours() + 10);

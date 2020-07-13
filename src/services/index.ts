@@ -4,6 +4,7 @@ import permissions from "./permissions";
 import { sourceFonts } from "@src/libs/fonts";
 import * as Font from "expo-font";
 import checkSession from "./checkSession";
+import notification from "./notification";
 
 export default async () => {
   StatusBar.setBarStyle("light-content");
@@ -12,8 +13,13 @@ export default async () => {
   // request permissions
   permissions();
 
+  // notification
+  notification();
+
   // init data store
   initDataStore();
-  await checkSession();
+
+  // check seasson
+  checkSession();
   return true;
 };

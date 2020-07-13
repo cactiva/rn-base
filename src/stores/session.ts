@@ -4,4 +4,5 @@ export default store("session", {
   jwt: null,
   user: {},
   expired: null,
+  isLoggedin: false,
 });

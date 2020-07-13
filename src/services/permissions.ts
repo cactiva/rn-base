@@ -4,8 +4,8 @@ import { Platform } from "react-native";
 export default () => {
   let permissionsRequest = [
     Permissions.NOTIFICATIONS,
-    Permissions.CAMERA,
-    Permissions.LOCATION,
+    // Permissions.CAMERA,
+    // Permissions.LOCATION,
   ] as any;
   if (Platform.OS === "ios") {
     permissionsRequest.push(Permissions.CAMERA_ROLL);

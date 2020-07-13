@@ -1,9 +1,15 @@
 import store from "@src/libs/store";
 
 export const initDataGlobal = {
-  serverUrl: "",
+  setting: [],
+  pushToken: null,
+  notifications: [],
+  localNotifications: [],
 };
 
 export default store("global", {
-  serverUrl: "",
+  setting: [],
+  pushToken: null,
+  notifications: [],
+  localNotifications: [],
 });

@@ -5,14 +5,16 @@ import services from "@src/services";
 import React, { useEffect, useState } from "react";
 
 export default () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const init = async () => {
+    let res = await services();
+    setLoading(res);
+  };
   useEffect(() => {
-    (async () => {
-      setLoading(await services());
-    })();
+    init();
   }, []);
 
-  if (!loading) {
+  if (!!loading) {
     return <Loading />;
   }
 
