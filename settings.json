@@ -1,21 +1,14 @@
 {
-  "name": "sfaknm",
-  "backend": {
-    "protocol": "https",
-    "port": "443",
-    "host": "sfaknm.web.andromedia.co.id",
-    "mode": "dev"
-  },
+  "name": "rn",
+  "mode": "dev",
   "hasura": {
-    "host": "https://sfaknm-hasura.web.andromedia.co.id",
-    "secret": "Sfaknm1234",
+    "host": "",
+    "secret": "",
     "port": "443"
   },
-  "db": {
-    "port": "5432",
-    "host": "db.plansys.co",
-    "user": "postgres",
-    "password": "andromedia123oke",
-    "database": "sfa_knm"
+  "hasura-dev": {
+    "host": "",
+    "secret": "",
+    "port": "443"
   }
 }
