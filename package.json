@@ -2,7 +2,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "expo": "expo start",
+    "dev": "expo start",
     "start": "react-native start",
     "test": "jest",
     "build:apk": "expo build:android -t apk",

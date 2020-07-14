@@ -21,5 +21,5 @@ export default async () => {
 
   // check seasson
   checkSession();
-  return true;
+  return false;
 };
