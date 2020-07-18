@@ -4,11 +4,13 @@ import { exampleActionHandler } from "./exampleNotification";
 import global from "@src/stores/global";
 
 export default async () => {
-  global.pushToken = await Notifications.getExpoPushTokenAsync();
+  global.pushToken = await Notifications.getExpoPushTokenAsync().catch((e) =>
+    console.log(e)
+  );
   Notifications.createChannelAndroidAsync("notification", {
     name: "RN Base",
     sound: true,
-    priority: "high",
+    priority: "default",
     vibrate: true,
   });
   // notification listener

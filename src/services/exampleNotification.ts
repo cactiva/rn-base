@@ -83,7 +83,7 @@ const generateNotif = async (items) => {
         let today = new Date();
         let eventDate = new Date(item.date);
         eventDate.setHours(parseInt(time[0]), parseInt(time[1]), 0);
-        if (today.getTime() < eventDate.getTime() && diff >= parseInt(day)) {
+        if (today.getTime() < eventDate.getTime()) {
           let notifDate = new Date();
           notifDate.setDate(today.getDate() + (diff - parseInt(day)));
           notifDate.setHours(parseInt(time[0]), parseInt(time[1]), 0);
