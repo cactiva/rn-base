@@ -29,7 +29,7 @@ export default observer(() => {
             padding: 20,
           }}
         >
-          Dashboard
+          Dashboard Test Deploy
         </Text>
         <Button
           styles={{

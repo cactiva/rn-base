@@ -7,6 +7,6 @@
 	<key>EXUpdatesSDKVersion</key>
 	<string>38.0.0</string>
 	<key>EXUpdatesURL</key>
-	<string>https://exp.host/@expo.deploy/rn-base</string>
+	<string>https://exp.host/@ksatu/rn-base</string>
 </dict>
 </plist>
